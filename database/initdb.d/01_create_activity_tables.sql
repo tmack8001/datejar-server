@@ -9,7 +9,8 @@ CREATE TABLE activities (
 CREATE TABLE activity_images (
   id          BIGSERIAL PRIMARY KEY,
   activity_id BIGSERIAL REFERENCES activities(id),
-  uri         VARCHAR(1000) NOT NULL,
+  uri         VARCHAR(1000) NULLABLE,
+  absolute_filepath VARCHAR(1000) NULLABLE,
   created_at  TIMESTAMP DEFAULT NOW(),
   updated_at  TIMESTAMP DEFAULT NOW()
 )

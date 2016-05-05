@@ -4,4 +4,4 @@ var bookshelf = require('bookshelf')(
 var knex = bookshelf.knex;
 
 // module.exports = { bookshelf, knex };
-export default bookshelf;
+export default { bookshelf, knex };

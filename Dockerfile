@@ -2,7 +2,7 @@
 FROM node:5.9
 
 COPY package.json /app/package.json
-RUN cd /app; npm install --production
+RUN cd /app && npm install --production
 
 COPY . /app
 

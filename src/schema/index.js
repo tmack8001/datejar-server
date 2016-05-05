@@ -30,10 +30,10 @@ var RootType = new GraphQLObjectType({
     },
     activities: {
       type: new GraphQLList(ActivityType),
-      resolve: async () => {
-        var objects = await Activity.fetchAll({
+      resolve: () => {
+        var objects = Activity.fetchAll({
           limit: 10, offset: 0
-        }).then(function(collection) {
+        }).then(function (collection) {
           return collection.models;
         });
         console.log(objects);

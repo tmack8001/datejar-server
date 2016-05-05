@@ -1,5 +1,4 @@
 /* @flow */
-import path from 'path';
 import BookshelfType from 'graphql-bookshelf';
 import {
   GraphQLString,
@@ -12,13 +11,13 @@ export default new GraphQLObjectType(BookshelfType({
   description: 'Containing wrapper for defining an image',
   fields: function () {
     return {
-      uri: this.attr({
+      uri: {
         type: new GraphQLNonNull(GraphQLString),
         description: 'The uri to resolve the image',
         resolve: (obj) => {
-          return path.join('localhost:8888', obj);
+          return obj.uri();
         }
-      })
+      }
     };
   }
 }));
